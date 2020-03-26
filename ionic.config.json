@@ -1,0 +1,7 @@
+{
+  "name": "docuSignDemo",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
