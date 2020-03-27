@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="cordova-docusign-plugin"
+        version="0.0.1">
+
+  <name>cordova docusign plugin</name>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <asset src="www/docuSign.js" target="js/docuSign.js"/>
+
+  <js-module src="www/docuSign.js" name="docuSign">
+    <clobbers target="docuSign" />
+  </js-module>
+
+  <platform name="ios">
+    
+    <config-file target="config.xml" parent="/*">
+      <feature name="DocuSign">
+        <param name="ios-package" value="SDDocuSign" />
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/SDDocuSign.h"/>
+    <source-file src="src/ios/SDDocuSign.m"/>
+      
+    <header-file src="src/ios/DSTableViewController.h"/>
+    <source-file src="src/ios/DSTableViewController.m"/>
+      
+    <header-file src="src/ios/SDK/DocuSign-iOS-SDK.h"/>
+    <header-file src="src/ios/SDK/DSRestAPIEnvironment.h"/>
+    <header-file src="src/ios/SDK/DSSessionManager.h"/>
+    <source-file src="src/ios/SDK/DSSessionManager.m"/>
+      
+    <header-file src="src/ios/SDK/Helpers/DSStoryboardFactory.h"/>
+    <source-file src="src/ios/SDK/Helpers/DSStoryboardFactory.m"/>
+    <header-file src="src/ios/SDK/Helpers/NSString+DS_ValidEmail.h"/>
+    <source-file src="src/ios/SDK/Helpers/NSString+DS_ValidEmail.m"/>
+    <header-file src="src/ios/SDK/Helpers/UIViewController+DSLayoutGuides.h"/>
+    <source-file src="src/ios/SDK/Helpers/UIViewController+DSLayoutGuides.m"/>
+      
+    <header-file src="src/ios/SDK/Login/DSChooseAccountViewController.h"/>
+    <source-file src="src/ios/SDK/Login/DSChooseAccountViewController.m"/>
+    <resource-file src="src/ios/SDK/Login/DSLogin.storyboard"/>
+    <resource-file src="src/ios/SDK/Login/modal_image_04.png"/>
+    <resource-file src="src/ios/SDK/Login/modal_image_04@2x.png"/>
+    <resource-file src="src/ios/SDK/Login/slide_04@2x.png"/>
+    <header-file src="src/ios/SDK/Login/DSLoginViewController.h"/>
+    <source-file src="src/ios/SDK/Login/DSLoginViewController.m"/>
+      
+    <header-file src="src/ios/SDK/RestAPI/Helpers/NSDateFormatter+DS_ISO8601.h"/>
+    <source-file src="src/ios/SDK/RestAPI/Helpers/NSDateFormatter+DS_ISO8601.m"/>
+    <header-file src="src/ios/SDK/RestAPI/Helpers/NSDictionary+DS_JSON.h"/>
+    <source-file src="src/ios/SDK/RestAPI/Helpers/NSDictionary+DS_JSON.m"/>
+    <header-file src="src/ios/SDK/RestAPI/Helpers/NSString+DS_URLEncoding.h"/>
+    <source-file src="src/ios/SDK/RestAPI/Helpers/NSString+DS_URLEncoding.m"/>
+    <header-file src="src/ios/SDK/RestAPI/Helpers/NSURL+DS_QueryDictionary.h"/>
+    <source-file src="src/ios/SDK/RestAPI/Helpers/NSURL+DS_QueryDictionary.m"/>
+    <header-file src="src/ios/SDK/RestAPI/Helpers/NSURL+DSMimeType.h"/>
+    <source-file src="src/ios/SDK/RestAPI/Helpers/NSURL+DSMimeType.m"/>
+    <header-file src="src/ios/SDK/RestAPI/Helpers/NSValueTransformer+DS_CustomTransformers.h"/>
+    <source-file src="src/ios/SDK/RestAPI/Helpers/NSValueTransformer+DS_CustomTransformers.m"/>
+    
+    <header-file src="src/ios/SDK/RestAPI/Logging/DSNetworkLogger.h"/>
+    <source-file src="src/ios/SDK/RestAPI/Logging/DSNetworkLogger.m"/>
+    
+    <header-file src="src/ios/SDK/RestAPI/Models/DSCreateEnvelopeResponse.h"/>
+    <source-file src="src/ios/SDK/RestAPI/Models/DSCreateEnvelopeResponse.m"/>
+    <header-file src="src/ios/SDK/RestAPI/Models/DSEnvelopeDetailsResponse.h"/>
+    <source-file src="src/ios/SDK/RestAPI/Models/DSEnvelopeDetailsResponse.m"/>
+    <header-file src="src/ios/SDK/RestAPI/Models/DSEnvelopeInPersonSigner.h"/>
+    <source-file src="src/ios/SDK/RestAPI/Models/DSEnvelopeInPersonSigner.m"/>
+    <header-file src="src/ios/SDK/RestAPI/Models/DSEnvelopeRecipient.h"/>
+    <source-file src="src/ios/SDK/RestAPI/Models/DSEnvelopeRecipient.m"/>
+    <header-file src="src/ios/SDK/RestAPI/Models/DSEnvelopeRecipientEmailNotification.h"/>
+    <source-file src="src/ios/SDK/RestAPI/Models/DSEnvelopeRecipientEmailNotification.m"/>
+    <header-file src="src/ios/SDK/RestAPI/Models/DSEnvelopeRecipientsResponse.h"/>
+    <source-file src="src/ios/SDK/RestAPI/Models/DSEnvelopeRecipientsResponse.m"/>
+    <header-file src="src/ios/SDK/RestAPI/Models/DSEnvelopeSigner.h"/>
+    <source-file src="src/ios/SDK/RestAPI/Models/DSEnvelopeSigner.m"/>
+    <header-file src="src/ios/SDK/RestAPI/Models/DSEnvelopesListEnvelope.h"/>
+    <source-file src="src/ios/SDK/RestAPI/Models/DSEnvelopesListEnvelope.m"/>
+    <header-file src="src/ios/SDK/RestAPI/Models/DSEnvelopesListResponse.h"/>
+    <source-file src="src/ios/SDK/RestAPI/Models/DSEnvelopesListResponse.m"/>
+    <header-file src="src/ios/SDK/RestAPI/Models/DSEnvelopeStatus.h"/>
+    <header-file src="src/ios/SDK/RestAPI/Models/DSLogicalEnvelopeGroup.h"/>
+    <header-file src="src/ios/SDK/RestAPI/Models/DSLoginAccount.h"/>
+    <source-file src="src/ios/SDK/RestAPI/Models/DSLoginAccount.m"/>
+    <header-file src="src/ios/SDK/RestAPI/Models/DSLoginInformationResponse.h"/>
+    <source-file src="src/ios/SDK/RestAPI/Models/DSLoginInformationResponse.m"/>
+    <header-file src="src/ios/SDK/RestAPI/Models/DSRestAPIResponseModel.h"/>
+    <source-file src="src/ios/SDK/RestAPI/Models/DSRestAPIResponseModel.m"/>
+    <header-file src="src/ios/SDK/RestAPI/Models/DSUserSignature.h"/>
+    <source-file src="src/ios/SDK/RestAPI/Models/DSUserSignature.m"/>
+    <header-file src="src/ios/SDK/RestAPI/Models/DSUserSignaturesResponse.h"/>
+    <source-file src="src/ios/SDK/RestAPI/Models/DSUserSignaturesResponse.m"/>
+      
+    <header-file src="src/ios/SDK/Signature/DSDrawSignatureController.h"/>
+    <source-file src="src/ios/SDK/Signature/DSDrawSignatureController.m"/>
+    <header-file src="src/ios/SDK/Signature/DSDrawSignatureView.h"/>
+    <source-file src="src/ios/SDK/Signature/DSDrawSignatureView.m"/>
+    <resource-file src="src/ios/SDK/Signature/DSSignature.storyboard"/>
+    <resource-file src="src/ios/SDK/Signature/camera_capture_selected.png"/>
+    <resource-file src="src/ios/SDK/Signature/camera_capture_selected@2x.png"/>
+    <resource-file src="src/ios/SDK/Signature/camera_capture.png"/>
+    <resource-file src="src/ios/SDK/Signature/camera_capture@2x.png"/>
+    <header-file src="src/ios/SDK/Signature/DSSignatureCaptureController.h"/>
+    <source-file src="src/ios/SDK/Signature/DSSignatureCaptureController.m"/>
+    <header-file src="src/ios/SDK/Signature/DSSignatureCaptureDelegate.h"/>
+    <header-file src="src/ios/SDK/Signature/DSSignatureCreationController.h"/>
+    <source-file src="src/ios/SDK/Signature/DSSignatureCreationController.m"/>
+    <header-file src="src/ios/SDK/Signature/DSSignaturePart.h"/>
+    
+    <header-file src="src/ios/SDK/Signature/Helpers/DSCircleButton.h"/>
+    <source-file src="src/ios/SDK/Signature/Helpers/DSCircleButton.m"/>
+    <header-file src="src/ios/SDK/Signature/Helpers/DSNavigationFadeSegue.h"/>
+    <source-file src="src/ios/SDK/Signature/Helpers/DSNavigationFadeSegue.m"/>
+    <header-file src="src/ios/SDK/Signature/Helpers/DSRotationForwardingNavigationControllerViewController.h"/>
+    <source-file src="src/ios/SDK/Signature/Helpers/DSRotationForwardingNavigationControllerViewController.m"/>
+    <header-file src="src/ios/SDK/Signature/Helpers/UIImage+Alpha.h"/>
+    <source-file src="src/ios/SDK/Signature/Helpers/UIImage+Alpha.m"/>
+    <header-file src="src/ios/SDK/Signature/Helpers/UIImage+Resize.h"/>
+    <source-file src="src/ios/SDK/Signature/Helpers/UIImage+Resize.m"/>
+    <header-file src="src/ios/SDK/Signature/Helpers/UIImage+RoundedCorner.h"/>
+    <source-file src="src/ios/SDK/Signature/Helpers/UIImage+RoundedCorner.m"/>
+    <header-file src="src/ios/SDK/Signature/Helpers/UIImage+SignatureCleanup.h"/>
+    <source-file src="src/ios/SDK/Signature/Helpers/UIImage+SignatureCleanup.m"/>
+      
+    <header-file src="src/ios/SDK/Signing/DSCompleteSigningViewController.h"/>
+    <source-file src="src/ios/SDK/Signing/DSCompleteSigningViewController.m"/>
+    <header-file src="src/ios/SDK/Signing/DSDeclineSigningViewController.h"/>
+    <source-file src="src/ios/SDK/Signing/DSDeclineSigningViewController.m"/>
+    <header-file src="src/ios/SDK/Signing/DSFinePrintViewController.h"/>
+    <source-file src="src/ios/SDK/Signing/DSFinePrintViewController.m"/>
+    <resource-file src="src/ios/SDK/Signing/DSSigning.storyboard"/>
+    <resource-file src="src/ios/SDK/Signing/DSSigning.xcassets/big_checkmark.imageset/big_checkmark.png"/>
+    <resource-file src="src/ios/SDK/Signing/DSSigning.xcassets/big_checkmark.imageset/big_checkmark@2x.png"/>
+    <header-file src="src/ios/SDK/Signing/DSSigningCompletedStatus.h"/>
+    <header-file src="src/ios/SDK/Signing/DSSigningViewController.h"/>
+    <source-file src="src/ios/SDK/Signing/DSSigningViewController.m"/>
+    <header-file src="src/ios/SDK/Signing/DSSigningViewControllerDelegate.h"/>
+    <header-file src="src/ios/SDK/Signing/DSStartSigningViewController.h"/>
+    <source-file src="src/ios/SDK/Signing/DSStartSigningViewController.m"/>
+    
+    <header-file src="src/ios/SDK/Signing/API/DSSigningAPIAddCCRecipients.h"/>
+    <source-file src="src/ios/SDK/Signing/API/DSSigningAPIAddCCRecipients.m"/>
+    <header-file src="src/ios/SDK/Signing/API/DSSigningAPIAdoptSignatureTabDetails.h"/>
+    <source-file src="src/ios/SDK/Signing/API/DSSigningAPIAdoptSignatureTabDetails.m"/>
+    <header-file src="src/ios/SDK/Signing/API/DSSigningAPICanFinishChanged.h"/>
+    <source-file src="src/ios/SDK/Signing/API/DSSigningAPICanFinishChanged.m"/>
+    <header-file src="src/ios/SDK/Signing/API/DSSigningAPIConsumerDisclosure.h"/>
+    <source-file src="src/ios/SDK/Signing/API/DSSigningAPIConsumerDisclosure.m"/>
+    <header-file src="src/ios/SDK/Signing/API/DSSigningAPIDeclineOptions.h"/>
+    <source-file src="src/ios/SDK/Signing/API/DSSigningAPIDeclineOptions.m"/>
+    <header-file src="src/ios/SDK/Signing/API/DSSigningAPIDeclineSigning.h"/>
+    <source-file src="src/ios/SDK/Signing/API/DSSigningAPIDeclineSigning.m"/>
+    <header-file src="src/ios/SDK/Signing/API/DSSigningAPIManager.h"/>
+    <source-file src="src/ios/SDK/Signing/API/DSSigningAPIManager.m"/>
+    <header-file src="src/ios/SDK/Signing/API/DSSigningAPIRecipient.h"/>
+    <source-file src="src/ios/SDK/Signing/API/DSSigningAPIRecipient.m"/>
+    <header-file src="src/ios/SDK/Signing/API/DSSigningAPITab.h"/>
+      
+    <header-file src="src/ios/SDK/associated_SDK/AKANetworkLogging/Classes/AKANetworkLogger.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/AKANetworkLogging/Classes/AKANetworkLogger.m"/>
+    <header-file src="src/ios/SDK/associated_SDK/AKANetworkLogging/Classes/AKANetworkNotificationLogger.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/AKANetworkLogging/Classes/AKANetworkNotificationLogger.m"/>
+    <header-file src="src/ios/SDK/associated_SDK/AKANetworkLogging/Classes/NSObject+AKANetworkNotificationLogger.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/AKANetworkLogging/Classes/NSObject+AKANetworkNotificationLogger.m"/>
+    <header-file src="src/ios/SDK/associated_SDK/AKANetworkLogging/Classes/NSURLRequest+AKANetworkLogger.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/AKANetworkLogging/Classes/NSURLRequest+AKANetworkLogger.m"/>
+    <header-file src="src/ios/SDK/associated_SDK/AKANetworkLogging/Classes/NSURLResponse+AKANetworkLogger.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/AKANetworkLogging/Classes/NSURLResponse+AKANetworkLogger.m"/>
+    
+    
+    <header-file src="src/ios/SDK/associated_SDK/CMPopTipView/CMPopTipView/CMPopTipView.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/CMPopTipView/CMPopTipView/CMPopTipView.m"/>
+    
+    <header-file src="src/ios/SDK/associated_SDK/DSTextEntryValidation/Classes/DSCondition.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/DSTextEntryValidation/Classes/DSCondition.m"/>
+    <header-file src="src/ios/SDK/associated_SDK/DSTextEntryValidation/Classes/DSCondition+DSCommon.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/DSTextEntryValidation/Classes/DSCondition+DSCommon.m"/>
+    <header-file src="src/ios/SDK/associated_SDK/DSTextEntryValidation/Classes/DSFieldTextCondition.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/DSTextEntryValidation/Classes/DSFieldTextCondition.m"/>
+    <header-file src="src/ios/SDK/associated_SDK/DSTextEntryValidation/Classes/DSMatchesFieldTextCondition.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/DSTextEntryValidation/Classes/DSMatchesFieldTextCondition.m"/>
+    <header-file src="src/ios/SDK/associated_SDK/DSTextEntryValidation/Classes/DSStartsWithFieldTextCondition.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/DSTextEntryValidation/Classes/DSStartsWithFieldTextCondition.m"/>
+    <header-file src="src/ios/SDK/associated_SDK/DSTextEntryValidation/Classes/DSValidatedForm.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/DSTextEntryValidation/Classes/DSValidatedForm.m"/>
+    <header-file src="src/ios/SDK/associated_SDK/DSTextEntryValidation/Classes/DSValidatedTextField.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/DSTextEntryValidation/Classes/DSValidatedTextField.m"/>
+    <header-file src="src/ios/SDK/associated_SDK/DSTextEntryValidation/Classes/DSValidatedTextFieldCell.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/DSTextEntryValidation/Classes/DSValidatedTextFieldCell.m"/>
+    <header-file src="src/ios/SDK/associated_SDK/DSTextEntryValidation/Classes/DSValidator.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/DSTextEntryValidation/Classes/DSValidator.m"/>
+    
+    <header-file src="src/ios/SDK/associated_SDK/Mantle/Mantle.h"/>
+    <header-file src="src/ios/SDK/associated_SDK/Mantle/MTLJSONAdapter.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/Mantle/MTLJSONAdapter.m"/>
+    <header-file src="src/ios/SDK/associated_SDK/Mantle/MTLManagedObjectAdapter.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/Mantle/MTLManagedObjectAdapter.m"/>
+    <header-file src="src/ios/SDK/associated_SDK/Mantle/MTLModel.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/Mantle/MTLModel.m"/>
+    <header-file src="src/ios/SDK/associated_SDK/Mantle/MTLModel+NSCoding.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/Mantle/MTLModel+NSCoding.m"/>
+    <header-file src="src/ios/SDK/associated_SDK/Mantle/MTLReflection.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/Mantle/MTLReflection.m"/>
+    <header-file src="src/ios/SDK/associated_SDK/Mantle/MTLValueTransformer.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/Mantle/MTLValueTransformer.m"/>
+    <header-file src="src/ios/SDK/associated_SDK/Mantle/NSArray+MTLManipulationAdditions.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/Mantle/NSArray+MTLManipulationAdditions.m"/>
+    <header-file src="src/ios/SDK/associated_SDK/Mantle/NSDictionary+MTLManipulationAdditions.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/Mantle/NSDictionary+MTLManipulationAdditions.m"/>
+    <header-file src="src/ios/SDK/associated_SDK/Mantle/NSError+MTLModelException.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/Mantle/NSError+MTLModelException.m"/>
+    <header-file src="src/ios/SDK/associated_SDK/Mantle/NSObject+MTLComparisonAdditions.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/Mantle/NSObject+MTLComparisonAdditions.m"/>
+    <header-file src="src/ios/SDK/associated_SDK/Mantle/NSValueTransformer+MTLInversionAdditions.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/Mantle/NSValueTransformer+MTLInversionAdditions.m"/>
+    <header-file src="src/ios/SDK/associated_SDK/Mantle/NSValueTransformer+MTLPredefinedTransformerAdditions.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/Mantle/NSValueTransformer+MTLPredefinedTransformerAdditions.m"/>
+    
+    <header-file src="src/ios/SDK/associated_SDK/Mantle/extobjc/metamacros.h"/>
+    <header-file src="src/ios/SDK/associated_SDK/Mantle/extobjc/MTLEXTKeyPathCoding.h"/>
+    <header-file src="src/ios/SDK/associated_SDK/Mantle/extobjc/MTLEXTRuntimeExtensions.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/Mantle/extobjc/MTLEXTRuntimeExtensions.m"/>
+    <header-file src="src/ios/SDK/associated_SDK/Mantle/extobjc/MTLEXTScope.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/Mantle/extobjc/MTLEXTScope.m"/>
+    
+    <header-file src="src/ios/SDK/associated_SDK/TPKeyboardAvoiding/TPKeyboardAvoiding/TPKeyboardAvoidingCollectionView.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/TPKeyboardAvoiding/TPKeyboardAvoiding/TPKeyboardAvoidingCollectionView.m"/>
+    <header-file src="src/ios/SDK/associated_SDK/TPKeyboardAvoiding/TPKeyboardAvoiding/TPKeyboardAvoidingScrollView.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/TPKeyboardAvoiding/TPKeyboardAvoiding/TPKeyboardAvoidingScrollView.m"/>
+    <header-file src="src/ios/SDK/associated_SDK/TPKeyboardAvoiding/TPKeyboardAvoiding/TPKeyboardAvoidingTableView.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/TPKeyboardAvoiding/TPKeyboardAvoiding/TPKeyboardAvoidingTableView.m"/>
+    <header-file src="src/ios/SDK/associated_SDK/TPKeyboardAvoiding/TPKeyboardAvoiding/UIScrollView+TPKeyboardAvoidingAdditions.h"/>
+    <source-file src="src/ios/SDK/associated_SDK/TPKeyboardAvoiding/TPKeyboardAvoiding/UIScrollView+TPKeyboardAvoidingAdditions.m"/>
+      
+    <framework src="CoreGraphics.framework"/>
+    <framework src="CoreLocation.framework"/>
+    <framework src="QuartzCore.framework" />
+  </platform>
+    
+</plugin>

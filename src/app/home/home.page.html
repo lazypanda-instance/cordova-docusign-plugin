@@ -1,20 +1,37 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      DocuSign Demo Application
     </ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">DocuSign Demo Application</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-card>
+      <ion-card-header>
+        DocuSign Authentication
+      </ion-card-header>
+    
+      <ion-card-content>
+        <form [formGroup]="docusignForm" (ngSubmit)="submitForm()">
+          <ion-item>
+            <ion-label>Email</ion-label>
+            <ion-input type="text" formControlName="email" name="email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Password</ion-label>
+            <ion-input type="password" formControlName="password" name="password"></ion-input>
+          </ion-item>
+          <ion-button color="primary" type="submit" block>Login</ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
   </div>
 </ion-content>
